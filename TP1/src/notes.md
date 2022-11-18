@@ -48,11 +48,9 @@ Un mutateur rpeut être privé
 4. *Pourquoi est-il préférable d'utiliser cette manière de faire plus complexe au lieu de d'écrire directement la chaîne « Animal » dans le code ?*
 
 5. *Pourquoi n'y a-t-il pas de différence entre les deux affichages suivants :*
-'''
-{
+'''java
     Animal a = new Animal(); 
     System.out.println(a); 
     System.out.println(a.toString());
-}
 '''
 
