@@ -11,9 +11,8 @@ public class Agent {
 	/** position sur la carte*/
 	protected Point coord;
 	/** état de santé de l'animal */
-	private Etat etat = Etat.Normal;
 	protected Sexe sexe;
-	private Sexe Assexue;
+	protected boolean faim=false;
 
 	/**
 	 * Renvoie un identifiant unique non encore utilisé
@@ -71,4 +70,11 @@ public class Agent {
 		super();
 	}
 
+	public void setFaim(boolean faim) {
+		this.faim = faim;
+	}
+
+	public boolean isFaim() {
+		return faim;
+	}
 }

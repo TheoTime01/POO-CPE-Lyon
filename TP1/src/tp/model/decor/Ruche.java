@@ -1,7 +1,7 @@
 package tp.model.decor;
 
-import tp.model.agents.Abeille;
 import tp.model.agents.Agent;
+import tp.model.agents.Animaux.Abeille;
 import tp.model.comportements.Hebergeur;
 import java.awt.Point;
 

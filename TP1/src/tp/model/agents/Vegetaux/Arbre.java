@@ -1,8 +1,13 @@
-package tp.model.agents;
+package tp.model.agents.Vegetaux;
 
+import tp.model.agents.Agent;
+import tp.model.agents.Animaux.Frelons;
 import tp.model.comportements.Hebergeur;
 
 public class Arbre extends Vegetal implements Hebergeur{
+
+    public int taille = 2;
+
     public Arbre() {
     }
     
@@ -21,5 +26,9 @@ public class Arbre extends Vegetal implements Hebergeur{
     public boolean accueillir(Agent a) {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    public void produireNectar() {
+        this.setPortionNectar((int) Math.pow(2,this.taille));
     }
 }

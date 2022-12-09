@@ -1,6 +1,8 @@
-package tp.model.agents;
+package tp.model.agents.Animaux;
 
 import java.awt.Point;
+
+import tp.model.agents.Sexe;
 
 public class FrelonAsiatique extends Frelons {
 

@@ -9,6 +9,11 @@ import java.lang.Math;
  *
  */
 public class Animal extends Agent {
+
+	protected Etat etat = Etat.Normal;
+
+	protected int NiveauSante = 10;
+
 	public Animal(Sexe sexe, Point coord) {
 		age = 0;
 		id = Animal.getUniqueId();
@@ -72,7 +77,59 @@ public class Animal extends Agent {
 		}
 		return false;
 	}
-	
+
+	public void setEtat(Etat etat) {
+		this.etat = etat;
+	}
+
+	public Etat getEtat() {
+		return etat;
+	}
+
+	public void aggraverEtat(){
+		if (this.etat == Etat.PleineForme){
+			this.etat = Etat.EnForme;
+		}
+		else if (this.etat == Etat.EnForme) {
+			this.etat = Etat.Normal;
+		}
+		else if (this.etat == Etat.Normal) {
+			this.etat = Etat.EnDifficulte;
+		}
+		else if (this.etat == Etat.EnDifficulte) {
+			this.etat = Etat.EnDetresse;
+		}
+		else if (this.etat == Etat.EnDetresse) {
+			this.etat = Etat.Mourant;
+		}
+	}
+
+	public void ameliorerEtat(){
+		if (this.etat == Etat.EnForme){
+			this.etat = Etat.PleineForme;
+		}
+		else if (this.etat == Etat.Normal) {
+			this.etat = Etat.EnForme;
+		}
+		else if (this.etat == Etat.EnDifficulte) {
+			this.etat = Etat.Normal;
+		}
+		else if (this.etat == Etat.EnDetresse) {
+			this.etat = Etat.EnDifficulte;
+		}
+		else if (this.etat == Etat.Mourant) {
+			this.etat = Etat.EnDetresse;
+		}
+	}
+
+	public void setNiveauSante(int sante) {
+		this.NiveauSante = sante;
+	}
+
+	public int getNiveauSante() {
+		return NiveauSante;
+	}
+
 	public static void main(String args[]) {
 		//tests unitaires de la classe Animal
 		//TODO décommentez les lignes pour approfondir le test unitaire

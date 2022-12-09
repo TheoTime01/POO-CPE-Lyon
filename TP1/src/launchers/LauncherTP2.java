@@ -3,7 +3,9 @@ package launchers;
 import java.awt.Point;
 
 import tp.model.agents.*;
-
+import tp.model.agents.Animaux.AbeilleSolitaire;
+import tp.model.agents.Animaux.FrelonAsiatique;
+import tp.model.agents.Vegetaux.Arbre;
 import tp.model.decor.*;
 
 
