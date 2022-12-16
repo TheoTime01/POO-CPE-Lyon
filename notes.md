@@ -53,6 +53,20 @@ Un mutateur rpeut être privé
     System.out.println(a); 
     System.out.println(a.toString());
 ```
+# 8.3. Compléter le projet avec votre existant
+
+3. pourquoi la méthode sInstaller d'Animal est-elle final ?
+--> Pour éviter que les classes filles puissent modifier le comportement de la méthode
+
+
+4. quel est l'intérêt d'utiliser une interface Deplacable plutôt que de donner une méthode abstraite seDeplacer à la classe Animal ? On parle des méthodes abstraites en deuxième partie (Erreur : source de la référence non trouvée) et cours [100-101]
+--> On peut avoir plusieurs classes qui implémentent l'interface Deplacable et qui ont des comportements différents
+
+5. quelle est la différence entre peutAccueillir de Hebergeur et accueillir ? Pourquoi accueillir renvoie-t-elle un booléen ?
+--> peutAccueillir est une méthode abstraite qui renvoie un booléen et accueillir est une méthode qui renvoie un booléen et qui est implémentée dans la classe Ruche
+
+6. une abeille domestique a forcément une Ruche comme hébergeur dès sa création. Comment prendre en compte cette contrainte ?
+--> On peut créer une méthode accueillir dans la classe Ruche qui prend en paramètre une abeille domestique et qui appelle la méthode accueillir de la classe abeille domestique
 
 # 9.1 Échauffement sur les collections
 
