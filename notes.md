@@ -75,11 +75,14 @@ Un mutateur rpeut être privé
 1. Quels sont les types concrets de collection utilisés dans l’algorithme ?
 --> Des Arrays et des Lists
 
-
 2. pourquoi parle-t-on des valeurs possible d'une énumération comme d'un EnumSet et non d'une EnumList (ce dernier terme n'existe pas dans l'API java) ?
+--> Parce que les énumérations sont des ensembles de valeurs possibles et non des listes de valeurs possibles 
 
 3. quel est l'intérêt d'utiliser un ListIterator plutôt qu'un Iterator simple ?
+--> On peut parcourir la liste dans les deux sens et on peut modifier la liste pendant qu'on la parcourt (avec un Iterator simple on ne peut pas modifier la liste pendant qu'on la parcourt)
 
 4. est-on obligé d'utiliser une liste chaînée ? Pourquoi ne pas utiliser une ArrayList ?
+--> On peut utiliser une ArrayList mais on ne peut pas modifier la liste pendant qu'on la parcourt
 
 5. pourquoi les méthodes ameliorerEtat() et aggraverEtat() sont-elles final? Qu'est que cela implique ?
+--> On ne peut pas modifier le comportement de ces méthodes dans les classes filles 
