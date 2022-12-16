@@ -86,3 +86,22 @@ Un mutateur rpeut être privé
 
 5. pourquoi les méthodes ameliorerEtat() et aggraverEtat() sont-elles final? Qu'est que cela implique ?
 --> On ne peut pas modifier le comportement de ces méthodes dans les classes filles 
+
+## 9.2.2. Codage
+
+1. Comment interpréteriez-vous la déclaration ArrayList<? extends Agent> liste;
+--> On peut mettre n'importe quel type d'agent dans la liste
+
+2. Que peut contenir cette liste ?
+--> Une liste d'agents
+
+3. Quelle méthode renvoie un objet de type Class ?
+--> getClass()
+
+4. complétez le constructeur en ajoutant la classe Abeille aux proies du Frelon.
+```java
+    proies.add(Abeille.class);
+```
+
+5. Testez. Pourquoi cela ne fonctionne-t-il pas ? En quoi cette technique diffère de instanceof Abeille ?
+--> La méthode est final et on ne peut pas la modifier
