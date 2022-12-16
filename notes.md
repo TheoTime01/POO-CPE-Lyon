@@ -113,3 +113,12 @@ Un mutateur rpeut être privé
 
 6. Quelle modification apporter, et dans quelle classe, pour que les abeilles soient classées par ordre d'identifiant (donc par ordre de création dans le programme) ?
 --> On peut créer une méthode compareTo dans la classe Abeille qui compare les identifiants des abeilles et on peut utiliser la méthode sort de la classe Collections pour trier la liste d'abeilles
+
+## 10.1.1. Prise en main
+1. quelle collection est utilisée pour contenir les Agents ? est-ce une bonne idée ?
+--> Une HashMap est utilisée pour contenir les Agents. C'est une bonne idée car on peut accéder aux agents par leur identifiant
+2. grâce à quelle méthode cette collection est-elle initialisée ? A quel endroit ?
+--> La collection est initialisée grâce à la méthode probaAgent() de la classe Monde. Cette méthode est appelée dans le constructeur de la classe Monde
+
+## 10.2.1. Comparable
+
