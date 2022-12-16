@@ -105,3 +105,11 @@ Un mutateur rpeut être privé
 
 5. Testez. Pourquoi cela ne fonctionne-t-il pas ? En quoi cette technique diffère de instanceof Abeille ?
 --> La méthode est final et on ne peut pas la modifier
+
+## 9.3.2 Algorithmie
+
+5. Pourquoi les abeilles ne sont-elles pas classées par ordre d'insertion dans la collection ?
+--> Parce que les abeilles sont triées par ordre alphabétique
+
+6. Quelle modification apporter, et dans quelle classe, pour que les abeilles soient classées par ordre d'identifiant (donc par ordre de création dans le programme) ?
+--> On peut créer une méthode compareTo dans la classe Abeille qui compare les identifiants des abeilles et on peut utiliser la méthode sort de la classe Collections pour trier la liste d'abeilles

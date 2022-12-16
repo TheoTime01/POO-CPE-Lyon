@@ -28,14 +28,13 @@ public abstract class Abeille extends Animal implements Hebergeur{
 	 * constante donnant la quantité maximal de miel que l'abeille peut transporter
 	 */
 	private static final int qteMax = 10;
+
+	public Abeille(Sexe s, Point p, Ruche r) {
+	}
 	
 	public Abeille(Sexe s, Point p) {
 		super(s,p);
 	}
-
-	public Abeille(Sexe s, Point p, Ruche r) {
-    }
-
     @Override
 	public void rencontrer(Agent a) {
 		/* rencontres */

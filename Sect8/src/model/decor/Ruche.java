@@ -1,10 +1,12 @@
 package model.decor;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import model.agents.Animal;
 import model.agents.Sexe;
+import model.agents.animaux.Abeille;
 import model.agents.animaux.AbeilleDomestique;
 import model.comportements.Hebergeur;
 
@@ -18,18 +20,36 @@ public class Ruche extends Decor implements Hebergeur{
 	 * constante taille maximale de la ruche
 	 */
 	private static int populationMax = 1000;
+
+	/**
+	 *Collection des abeilles de la ruche
+	 */
+	protected HashSet<Abeille> population;
 	
 	public Ruche(Point p) {
 		super(p);
 		//population = new ... TODO;
+		population = new HashSet<Abeille>();
 	}
 
 	@Override
 	public boolean peutAccueillir(Animal a) {
-		return a instanceof AbeilleDomestique; /*&& 
-				&& //population ok
-				//l'abeille n'appartient pas déjà à la ruche
-				 */
+		
+		if (a instanceof AbeilleDomestique){
+			// verify that population is not null
+			if (population != null){
+				if (populationMax >= population.size()){
+					//verify that the bee is not already in the hive
+					if (population.contains(a)){
+						return false;
+					}
+					else{
+						return true;
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -39,19 +59,25 @@ public class Ruche extends Decor implements Hebergeur{
 			/* Ne pas faire ça ici: c'est à l'animal de mettre à jour ses attributs
 			 * a.setHebergeur(this);
 			 */
-			//TODO ajouter a à la population
 			ret=true;
+			population.add((AbeilleDomestique) a);
 		}
 		return ret;
 	}
 	
 	public String toString() {
-		String ret ="TODO";
 		/*
 		 * "\t" code une tabulation dans une chaine de caractères
 		 * "\n" un saut de ligne 
 		 */
-		return ret;
+		
+		String BeeHive = "Ruche: (" + this.getCoord().x + ";" + this.getCoord().y + ")"+" population: "+ population.size() + " abeilles\n ";
+		
+		// Add all the bees from the population HashSet to the BeeHive string
+		for (Abeille abeille : population){
+			BeeHive += "\t*"+ abeille.toString()+"\n";
+		}
+		return BeeHive;
 	}
 	
 	public static void main(String[] a) {

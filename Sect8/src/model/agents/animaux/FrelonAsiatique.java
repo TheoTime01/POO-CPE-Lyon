@@ -9,7 +9,4 @@ public class FrelonAsiatique extends Frelon{
 	public FrelonAsiatique(Sexe s, Point p) {
 		super(s, p);
 	}
-
-	
-
 }

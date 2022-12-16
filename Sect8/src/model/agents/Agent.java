@@ -144,10 +144,8 @@ public abstract class Agent {//implements Cloneable, Comparable<Agent>
 	@Override
 	public String toString() {
 		//NomDeLaClasse n° id_agent (position x; position y)
-		return getClass().getSimpleName() + " " + id + " (" + getCoord() + ")";
+		return  getClass().getSimpleName() + " "+ id + " (" + " (" + this.getCoord().x + ";" + this.getCoord().y + ")" + ")";  
 	}
-	
-	
 	
 	@Override
 	public int hashCode() {
