@@ -18,6 +18,7 @@ import model.agents.animaux.FrelonEuropeen;
 import model.agents.animaux.Varroa;
 import model.agents.vegetaux.Arbre;
 import model.agents.vegetaux.Fleur;
+import model.comportements.CoordComparator;
 import model.decor.Ruche;
 
 public class Monde {
@@ -165,12 +166,10 @@ public class Monde {
 		String ret="";
 		ret+="******************************\n";
 		ret+="Le monde contient "+agents.size()+" agents:\n";
-		/*
-		 * TODO
-		Set<Agent> coordSet = new TreeSet<Agent>(new CoordComparator());//TODO
+
+		Set<Agent> coordSet = new TreeSet<Agent>(new CoordComparator());
 		coordSet.addAll(agents);
-		*/
-		for(Agent a:agents) {
+		for(Agent a:coordSet) {
 			ret+="\t"+a+"\n";
 		}
 		return ret;
