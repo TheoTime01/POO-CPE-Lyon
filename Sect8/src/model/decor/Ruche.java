@@ -72,11 +72,20 @@ public class Ruche extends Decor implements Hebergeur{
 		 */
 		
 		String BeeHive = "Ruche: (" + this.getCoord().x + ";" + this.getCoord().y + ")"+" population: "+ population.size() + " abeilles\n ";
-		
+
+		// Sort population by id and add it to a list
+		ArrayList<Abeille> sortedPopulation = new ArrayList<Abeille>(population);
+		sortedPopulation.sort((Abeille a1, Abeille a2) -> a1.getId() - a2.getId());
 		// Add all the bees from the population HashSet to the BeeHive string
-		for (Abeille abeille : population){
+		for (Abeille abeille : sortedPopulation){
 			BeeHive += "\t*"+ abeille.toString()+"\n";
 		}
+		
+		// // Add all the bees from the population HashSet to the BeeHive string
+		// for (Abeille abeille : population){
+		// 	BeeHive += "\t*"+ abeille.toString()+"\n";
+		// }
+
 		return BeeHive;
 	}
 	

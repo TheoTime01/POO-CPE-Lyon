@@ -1,7 +1,5 @@
 package model.agents.animaux;
 
-import model.agents.animaux.Abeille;
-
 import java.awt.Point;
 
 import model.agents.Sexe;

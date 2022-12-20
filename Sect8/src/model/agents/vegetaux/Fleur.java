@@ -2,6 +2,8 @@ package model.agents.vegetaux;
 
 import java.awt.Point;
 
+import model.agents.Agent;
+
 public class Fleur extends Vegetal {
 
 	public Fleur(Point point) {
@@ -13,5 +15,4 @@ public class Fleur extends Vegetal {
 	public void produire() {
 		qteNectar+=1;
 	}
-
 }

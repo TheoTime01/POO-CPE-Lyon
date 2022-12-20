@@ -13,7 +13,7 @@ import model.comportements.Deplacable;
  * @author bruno
  *
  */
-public abstract class Agent {//implements Cloneable, Comparable<Agent>
+public abstract class Agent implements Comparable<Agent> {//implements Cloneable, Comparable<Agent>
 	
 	/* attributs de classe */
 	private static int currentId = 0;
@@ -187,5 +187,11 @@ public abstract class Agent {//implements Cloneable, Comparable<Agent>
 		//TODO 
 		Agent.currentId++;
 		return currentId;
+	}
+
+	@Override
+	public int compareTo(Agent o) {
+		// Comparison by id
+		return this.id - o.id;
 	}
 }

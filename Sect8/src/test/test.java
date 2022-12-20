@@ -34,19 +34,46 @@ public class test {
         // System.out.println("On accueille l'abeille2 dans la ruche...");
         // ruche.accueillir(abeille2);
 
-        // Test accueillir 5 abeilles dans la ruche
+        // // Test accueillir 5 abeilles dans la ruche
+        // Ruche ruche = new Ruche(new Point(0, 0));
+        // Abeille abeille = new AbeilleDomestique(Sexe.Femelle, new Point(0, 0), ruche);
+        // Abeille abeille2 = new AbeilleDomestique(Sexe.Femelle, new Point(0, 0), ruche);
+        // Abeille abeille3 = new AbeilleDomestique(Sexe.Male, new Point(0, 0), ruche);
+        // Abeille abeille4 = new AbeilleDomestique(Sexe.Femelle, new Point(0, 0), ruche);
+        // Abeille abeille5 = new AbeilleDomestique(Sexe.Male, new Point(0, 0), ruche);
+        // // La ruche doit accueilir toutes les abeilles
+        // ruche.accueillir(abeille);
+        // ruche.accueillir(abeille5);
+        // ruche.accueillir(abeille2);
+        // ruche.accueillir(abeille4);
+        // ruche.accueillir(abeille3);
+        // System.out.println(ruche);
+
+        // Test position abeille
+        Abeille abeille = new AbeilleDomestique(Sexe.Male, new Point(10, 0));
+        System.out.println(abeille);
+        // On crée une ruche et ajoute l'abeille dedans
         Ruche ruche = new Ruche(new Point(0, 0));
-        Abeille abeille = new AbeilleDomestique(Sexe.Femelle, new Point(0, 0), ruche);
-        Abeille abeille2 = new AbeilleDomestique(Sexe.Femelle, new Point(0, 0), ruche);
-        Abeille abeille3 = new AbeilleDomestique(Sexe.Male, new Point(0, 0), ruche);
-        Abeille abeille4 = new AbeilleDomestique(Sexe.Femelle, new Point(0, 0), ruche);
-        Abeille abeille5 = new AbeilleDomestique(Sexe.Male, new Point(0, 0), ruche);
-        // La ruche doit accueilir toutes les abeilles
         ruche.accueillir(abeille);
-        ruche.accueillir(abeille5);
-        ruche.accueillir(abeille2);
-        ruche.accueillir(abeille4);
-        ruche.accueillir(abeille3);
         System.out.println(ruche);
+        // On crée une autre abeille
+        Abeille abeille2 = new AbeilleDomestique(Sexe.Femelle, new Point(15, 0));
+        System.out.println(abeille2);
+        Abeille abeille3 = new AbeilleDomestique(Sexe.Male, new Point(15, 0));
+        System.out.println(abeille3);
+        Abeille abeille4 = new AbeilleDomestique(Sexe.Male, new Point(15, 0));
+        System.out.println(abeille4);
+        // On ajoute l'abeille2 dans la ruche
+        ruche.accueillir(abeille3);
+        ruche.accueillir(abeille4);
+        ruche.accueillir(abeille2);
+        System.out.println(ruche);
+
+        // // Test récuperer id abeille
+        // Abeille abeille = new AbeilleDomestique(Sexe.Male, new Point(10, 0));
+        // System.out.println(abeille);
+        // // Print the id of the abeille
+        // System.out.println(abeille.getId());
+
     }
 }
