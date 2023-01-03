@@ -42,4 +42,9 @@ public class Varroa extends Animal {
 	public void seDeplacer() {
 		//TODO
 	}
+
+	public void supprimer(Animal a) {
+		// TODO Auto-generated method stub
+		
+	}
 }

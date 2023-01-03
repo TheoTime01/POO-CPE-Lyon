@@ -122,3 +122,28 @@ Un mutateur rpeut être privé
 
 ## 10.2.1. Comparable
 
+2. Était-ce une bonne idée de choisir un TreeSet plutôt qu'un HashSet pour agents ?
+-->  
+
+# 11. Bilan intermédiaire
+1. Quel(s) type(s) de collection(s) n'a(ont) pas encore été utilisé(s) pour l'instant ?
+--> Les LinkedHashSet et les LinkedHashSet 
+
+# 12.2.1.1. Première approche naïve
+1. Créez une méthode gererRencontre() dans le monde qui, pour chacun des agents, renvoie une liste des agents qu'il peut rencontrer (on les appellera les voisins de l'agent).
+
+2. Appeler la méthode rencontrer de l'agent avec chacun de ses voisins.
+
+3. Quels sont les problèmes que posent cette approche ?
+--> On parcourt deux fois la liste des agents et on fait des comparaisons inutiles (on compare un agent avec lui-même)
+
+# 12.3.1. Mode nuit et Hebergeurs
+Un hebergeur doit donc pouvoir transmettre ses coordonnées.
+1. Est-ce un problème d'ajouter une méthode getCoord() à Hebergeur alors que certains Herbergeurs (Agents) ont déjà cette méthode héritée d'Agent ? Pourquoi ?
+--> Non, on peut ajouter une méthode getCoord() à Hebergeur car tous les hébergeurs ont des coordonnées et on peut donc ajouter cette méthode à la classe Hebergeur 
+
+2. Qui est responsable du changement de mode ?
+--> Le monde est responsable du changement de mode car il est le seul à connaître les agents et il peut donc appeler la méthode changerMode() de chaque agent 
+
+3. implémentez cette fonctionnalité
+

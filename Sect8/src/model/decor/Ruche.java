@@ -100,4 +100,11 @@ public class Ruche extends Decor implements Hebergeur{
 		System.out.println(r);
 		*/
 	}
+
+	@Override
+	public void supprimer(Animal a) {
+		// TODO supprimer l'animal de la ruche
+		population.remove(a);
+		
+	}
 }

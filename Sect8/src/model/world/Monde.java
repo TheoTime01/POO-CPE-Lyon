@@ -1,13 +1,17 @@
 package model.world;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import model.agents.Agent;
+import model.agents.Animal;
+import model.agents.Etat;
 //partie 2
 //import model.agents.PointPositif;
 import model.agents.Sexe;
@@ -175,12 +179,36 @@ public class Monde {
 		return ret;
 	}
 
+	public boolean rencontre(Agent a, Agent b) {
+		int rayon = 10;
+		return a.getCoord().distance(b.getCoord()) < rayon;
+	}
+	
+	public List<Agent> gererRencontre(Agent a) {
+		List<Agent> ret = new ArrayList<Agent>();
+		for(Agent b:agents) {
+			if(rencontre(a,b)) {
+				ret.add(b);
+			}
+		}
+		return ret;
+	}
+	
+	public void supprimer(Animal a) {
+		//si l'état de l'animal est mourant, on le supprime
+			agents.remove(a);
+	}
+
+
+
 	/**
 	 * génère un cycle de vie dans le monde
 	 */
 	public void cycle() {
 		for(Agent a:agents) {
 			a.cycle();
-		}
+			
+			//gestion des rencontres avec rencon
 	}
+}
 }

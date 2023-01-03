@@ -41,4 +41,15 @@ public class Arbre extends Vegetal implements Hebergeur{
 	public void produire() {
 		qteNectar += Math.pow(2, taille);		
 	}
+
+	@Override
+	public void supprimer(Animal a) {
+		//si l'animal est une abeille solitaire ou un frelon, on le supprime
+		if (a instanceof AbeilleSolitaire || a instanceof Frelon){
+			nbHeberges--;
+		}
+		
+
+		
+	}
 }

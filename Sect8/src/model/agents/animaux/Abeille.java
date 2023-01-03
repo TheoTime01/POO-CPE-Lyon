@@ -77,12 +77,22 @@ public abstract class Abeille extends Animal implements Hebergeur{
 	@Override
 	protected void maj() {
 		// TODO Auto-generated method stub
+		//mise a jour de l'etat, la santé de l'abeille
 		
 	}
 
 	@Override
 	protected void seNourrir() {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void supprimer(Animal a) {
+		// si l'animal est un Varroa, on le supprime
+		if(a instanceof Varroa) {
+			parasite = false;
+		}
 		
 	}
 
