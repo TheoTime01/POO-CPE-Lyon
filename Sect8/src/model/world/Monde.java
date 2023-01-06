@@ -207,8 +207,27 @@ public class Monde {
 	public void cycle() {
 		for(Agent a:agents) {
 			a.cycle();
-			
-			//gestion des rencontres avec rencon
+
+			if(a instanceof Animal) {
+				Animal an = (Animal) a;
+				if(an.getEtat()==Etat.NUIT) {
+					//si l'animal est un frelon, il cherche une arbre
+					if(an instanceof Frelon) {
+						Frelon fr = (Frelon) an;
+						if(!fr.getCoord().equals(fr.getHebergeur().getCoord())) {
+							fr.seDirigerVers(fr.getHebergeur().getCoord());
+						}
+					}
+					//si l'animal est une abeille, il cherche une ruche
+					if(an instanceof Abeille) {
+						Abeille ab = (Abeille) an;
+						if(!ab.getCoord().equals(ab.getHebergeur().getCoord())) {
+							ab.seDirigerVers(ab.getHebergeur().getCoord());
+						}
+					}
+				}
+			}
+		}
 	}
 }
-}
+
