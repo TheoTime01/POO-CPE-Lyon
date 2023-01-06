@@ -49,7 +49,5 @@ public class Arbre extends Vegetal implements Hebergeur{
 			nbHeberges--;
 		}
 		
-
-		
 	}
 }

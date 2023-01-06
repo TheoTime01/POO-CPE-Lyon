@@ -11,7 +11,6 @@ import java.util.TreeSet;
 
 import model.agents.Agent;
 import model.agents.Animal;
-import model.agents.Etat;
 //partie 2
 //import model.agents.PointPositif;
 import model.agents.Sexe;
@@ -42,6 +41,13 @@ public class Monde {
 	 * constante: longueur du monde
 	 */
 	private static int LONGUEUR = 20;
+
+	private int heure;
+
+	//creer une variable boolean pour la nuit
+	private boolean nuit;
+
+
 	
 	/**
 	 * 
@@ -199,6 +205,26 @@ public class Monde {
 			agents.remove(a);
 	}
 
+	//gerer l'heure de la journée 
+	public void gererHeure() {
+		//si l'heure est entre 0 et 6, on est en nuit
+		if(heure>=0 && heure<6) {
+			nuit = true;
+		}
+		//si l'heure est entre 6 et 18, on est en jour
+		else if(heure>=6 && heure<18) {
+			nuit = false;
+		}
+		//si l'heure est entre 18 et 24, on est en soirée
+		else if(heure>=18 && heure<24) {
+			nuit = true;
+		}
+		//si l'heure est à 24, on passe à 0
+		if(heure==24) {
+			heure=0;
+		}
+	}
+
 
 
 	/**
@@ -207,27 +233,15 @@ public class Monde {
 	public void cycle() {
 		for(Agent a:agents) {
 			a.cycle();
-
-			if(a instanceof Animal) {
-				Animal an = (Animal) a;
-				if(an.getEtat()==Etat.NUIT) {
-					//si l'animal est un frelon, il cherche une arbre
-					if(an instanceof Frelon) {
-						Frelon fr = (Frelon) an;
-						if(!fr.getCoord().equals(fr.getHebergeur().getCoord())) {
-							fr.seDirigerVers(fr.getHebergeur().getCoord());
-						}
-					}
-					//si l'animal est une abeille, il cherche une ruche
-					if(an instanceof Abeille) {
-						Abeille ab = (Abeille) an;
-						if(!ab.getCoord().equals(ab.getHebergeur().getCoord())) {
-							ab.seDirigerVers(ab.getHebergeur().getCoord());
-						}
-					}
+		
+			if(nuit) {
+				if(a instanceof Animal) {
+					Animal animal = (Animal) a;
+					animal.seDeplacer();
 				}
 			}
 		}
+		//on incrémente l'heure
+		heure++;
 	}
 }
-
